@@ -1,3 +1,8 @@
+
+```bash
+python tools/train.py configs/rfla/smoking_fcos_r50_rfla_kld_1x.py
+```
+
 # mmdet-rfla
 This is the official implementation of the ECCV2022 paper "RFLA: Gaussian Receptive based Label Assignment for Tiny Object Detection". [arxiv](https://arxiv.org/abs/2208.08738)
 

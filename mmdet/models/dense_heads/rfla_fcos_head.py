@@ -104,7 +104,15 @@ class RFLA_FCOSHead(AnchorFreeHead):
             init_cfg=init_cfg,
             **kwargs)
         self.loss_centerness = build_loss(loss_centerness)
-        self.assigner = build_assigner(self.train_cfg.assigner)
+        # self.assigner = build_assigner(self.train_cfg.assigner)
+        self.assigner = build_assigner(dict(
+            type='HieAssigner',
+             ignore_iof_thr=-1,
+             gpu_assign_thr=256,
+             iou_calculator=dict(type='BboxDistanceMetric'),
+             assign_metric='kl',
+             topk=[3,1],
+             ratio=0.9))
 
     def _init_layers(self):
         """Initialize layers of the head."""
