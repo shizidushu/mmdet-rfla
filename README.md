@@ -1,6 +1,6 @@
 
 ```bash
-python tools/train.py configs/rfla/smoking_fcos_r50_rfla_kld_1x.py
+python tools/train.py configs/rfla/combined_all_smoking_fcos_r50_rfla_kld_1x.py
 ```
 
 # mmdet-rfla
